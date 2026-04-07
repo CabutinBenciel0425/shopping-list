@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Handlee&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
 @import "tailwindcss";
 @layer base {
   *,
@@ -16,7 +16,7 @@
   }
 
   html {
-    font-family: "Handlee", sans-serif;
+    font-family: "Gochi Hand", sans-serif;
     /* color: #333; */
   }
 
@@ -28,5 +28,13 @@
     flex-direction: column;
     height: 100vh;
     color: #fff;
+  }
+
+  #root {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
