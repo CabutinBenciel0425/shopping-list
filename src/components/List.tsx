@@ -1,11 +1,13 @@
+import { useItems } from "../hooks/useItems";
 import ListItem from "../UI/ListItem";
-import { Items } from "../data/Items";
 
 export default function List() {
+  const { state } = useItems();
+
   return (
     <div>
       <ul>
-        {Items.map((item) => (
+        {state.items.map((item) => (
           <ListItem item={item} key={item.id} />
         ))}
       </ul>

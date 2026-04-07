@@ -2,7 +2,8 @@ import { HiPencil } from "react-icons/hi2";
 import { FaTrashCan } from "react-icons/fa6";
 import Button from "./Button";
 
-function Actions() {
+function Actions({ id }: { id: number }) {
+  console.log(id);
   return (
     <div className="flex items-center gap-4">
       <Button
@@ -12,7 +13,7 @@ function Actions() {
         <HiPencil />
       </Button>
       <Button
-        variant="medium"
+        variant="danger"
         onClick={() => console.log("Clicked delete button")}
       >
         <FaTrashCan />

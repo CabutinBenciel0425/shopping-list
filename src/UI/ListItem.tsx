@@ -10,15 +10,16 @@ type ListItemProps = {
 };
 
 export default function ListItem({ item }: ListItemProps) {
+  const { id, item: product, quantity } = item;
   return (
     <li className="grid grid-cols-[auto_1fr_auto] gap-4 items-center py-2 border-b-2 border-b-cyan-900">
-      <Quantity />
+      <Quantity quantity={quantity} id={id} />
 
       <div>
-        <p className="text-4xl">Milk</p>
+        <p className="text-4xl">{product}</p>
       </div>
 
-      <Actions />
+      <Actions id={id} />
     </li>
   );
 }
