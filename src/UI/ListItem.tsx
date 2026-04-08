@@ -1,12 +1,9 @@
 import Quantity from "./Quantity";
 import Actions from "./Actions";
+import type { ItemsType } from "../data/Items";
 
 type ListItemProps = {
-  item: {
-    id: number;
-    item: string;
-    quantity: number;
-  };
+  item: ItemsType;
 };
 
 export default function ListItem({ item }: ListItemProps) {
@@ -19,7 +16,7 @@ export default function ListItem({ item }: ListItemProps) {
         <p className="text-4xl">{product}</p>
       </div>
 
-      <Actions id={id} />
+      <Actions item={item} />
     </li>
   );
 }

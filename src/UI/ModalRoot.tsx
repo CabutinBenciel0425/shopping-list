@@ -1,6 +1,6 @@
 import { useUI } from "../hooks/useUI";
 import Modal from "./Modal";
-import AddItemForm from "./modals/AddItemForm";
+import AddUpdateItemForm from "./modals/AddUpdateItemForm";
 import DeleteItemForm from "./modals/DeleteItemForm";
 
 function ModalRoot() {
@@ -9,8 +9,9 @@ function ModalRoot() {
 
   return (
     <Modal onClose={closeModal} className="w-100">
-      {state.modal.type === "add" && <AddItemForm />}
+      {state.modal.type === "add" && <AddUpdateItemForm />}
       {state.modal.type === "delete" && <DeleteItemForm />}
+      {state.modal.type === "update" && <AddUpdateItemForm />}
     </Modal>
   );
 }
