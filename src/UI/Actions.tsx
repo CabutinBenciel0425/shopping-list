@@ -11,7 +11,7 @@ function Actions({ item }: { item: ItemsType }) {
       <Button variant="medium" onClick={() => openModal("update", item)}>
         <HiPencil />
       </Button>
-      <Button variant="danger" onClick={() => openModal("delete", item.id)}>
+      <Button variant="danger" onClick={() => openModal("delete", item)}>
         <FaTrashCan />
       </Button>
     </div>
