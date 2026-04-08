@@ -1,14 +1,20 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { itemReducer } from "../reducers/itemReducer";
-import { Items } from "../data/Items";
 import { ItemContext } from "./ItemContext";
 import type { itemState } from "../reducers/itemTypes";
 
 export function ItemProvider({ children }: { children: React.ReactNode }) {
-  const initialState: itemState = {
-    items: Items,
-  };
+  const storedList = localStorage.getItem("list");
+
+  const initialState: itemState = storedList
+    ? { items: JSON.parse(storedList) }
+    : { items: [] };
+
   const [state, dispatch] = useReducer(itemReducer, initialState);
+
+  useEffect(() => {
+    localStorage.setItem("list", JSON.stringify(state.items));
+  }, [state.items]);
 
   return (
     <ItemContext.Provider value={{ state, dispatch }}>
