@@ -14,5 +14,18 @@ export function useItems() {
     });
   }
 
-  return { state, dispatch, updateItem };
+  function addItem(value: string) {
+    dispatch({
+      type: "ADD_ITEM",
+      payload: {
+        id: Date.now(),
+        item: value,
+        quantity: 1,
+        date_created: new Date().toISOString(),
+        isPurchased: false,
+      },
+    });
+  }
+
+  return { state, dispatch, updateItem, addItem };
 }
